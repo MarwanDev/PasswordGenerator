@@ -33,6 +33,7 @@
             this.btnGenerateMultiplePasswords = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.rtbMultiplePasswords = new System.Windows.Forms.RichTextBox();
+            this.sfdPasswordsText = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumberOfPasswords)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,6 +86,7 @@
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // rtbMultiplePasswords
             // 
@@ -126,5 +128,6 @@
         private System.Windows.Forms.Button btnGenerateMultiplePasswords;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.RichTextBox rtbMultiplePasswords;
+        private System.Windows.Forms.SaveFileDialog sfdPasswordsText;
     }
 }

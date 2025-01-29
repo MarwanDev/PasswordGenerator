@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-
+using System.IO;
 namespace PasswordGenerator
 {
     public partial class MultiplePasswordsForm : Form
@@ -43,6 +43,28 @@ namespace PasswordGenerator
         private void RtbMultiplePasswords_TextChanged(object sender, EventArgs e)
         {
             btnSave.Enabled = rtbMultiplePasswords.Text.Length > 0;
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            sfdPasswordsText.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            sfdPasswordsText.Title = "Save Passwords";
+            sfdPasswordsText.DefaultExt = "txt";
+
+            if (sfdPasswordsText.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string filePath = sfdPasswordsText.FileName;
+                    string content = rtbMultiplePasswords.Text;
+                    File.WriteAllText(filePath, content);
+                    MessageBox.Show("File saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error saving file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
