@@ -224,9 +224,11 @@
             // 
             // automaticallyToolStripMenuItem
             // 
+            this.automaticallyToolStripMenuItem.CheckOnClick = true;
             this.automaticallyToolStripMenuItem.Name = "automaticallyToolStripMenuItem";
             this.automaticallyToolStripMenuItem.Size = new System.Drawing.Size(294, 22);
             this.automaticallyToolStripMenuItem.Text = "Automatically Copy Generated Passwords";
+            this.automaticallyToolStripMenuItem.Click += new System.EventHandler(this.AutomaticallyToolStripMenuItem_Click);
             // 
             // resetToDefaultsToolStripMenuItem
             // 

@@ -6,11 +6,13 @@ namespace PasswordGenerator
 {
     public partial class Form1 : Form
     {
-        private MultiplePasswordsForm _mForm;
+        private readonly MultiplePasswordsForm _multiplePasswordsForm;
+        private bool _isAutomaticCopy;
         public Form1()
         {
             InitializeComponent();
-            _mForm = new MultiplePasswordsForm();
+            _multiplePasswordsForm = new MultiplePasswordsForm();
+            _isAutomaticCopy = false;
         }
 
         private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,6 +69,8 @@ namespace PasswordGenerator
             {
                 lblBits.Text = $"{Math.Round(ClsPassword.NumberOfBits, 2)} bits";
             }
+            if (_isAutomaticCopy)
+                System.Windows.Forms.Clipboard.SetText(tbSinglePassword.Text);
         }
 
         private void TbPasswordType_Selected(object sender, TabControlEventArgs e)
@@ -98,14 +102,14 @@ namespace PasswordGenerator
             System.Windows.Forms.Clipboard.SetText(tbSinglePassword.Text);
         }
 
-        private void CcontextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
-        }
-
         private void GenerateMultiplePasswordsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _mForm.ShowDialog();
+            _multiplePasswordsForm.ShowDialog();
+        }
+
+        private void AutomaticallyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _isAutomaticCopy = automaticallyToolStripMenuItem.Checked;
         }
     }
 }

@@ -63,6 +63,7 @@
             0,
             0,
             0});
+            this.nudNumberOfPasswords.ValueChanged += new System.EventHandler(this.NudNumberOfPasswords_ValueChanged);
             // 
             // btnGenerateMultiplePasswords
             // 
@@ -72,9 +73,11 @@
             this.btnGenerateMultiplePasswords.TabIndex = 2;
             this.btnGenerateMultiplePasswords.Text = "Generate";
             this.btnGenerateMultiplePasswords.UseVisualStyleBackColor = true;
+            this.btnGenerateMultiplePasswords.Click += new System.EventHandler(this.BtnGenerateMultiplePasswords_Click);
             // 
             // btnSave
             // 
+            this.btnSave.Enabled = false;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnSave.Location = new System.Drawing.Point(386, 14);
             this.btnSave.Name = "btnSave";
@@ -85,9 +88,11 @@
             // 
             // rtbMultiplePasswords
             // 
+            this.rtbMultiplePasswords.BackColor = System.Drawing.SystemColors.ControlLight;
             this.rtbMultiplePasswords.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbMultiplePasswords.Location = new System.Drawing.Point(3, 49);
             this.rtbMultiplePasswords.Name = "rtbMultiplePasswords";
+            this.rtbMultiplePasswords.ReadOnly = true;
             this.rtbMultiplePasswords.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             this.rtbMultiplePasswords.Size = new System.Drawing.Size(497, 389);
             this.rtbMultiplePasswords.TabIndex = 4;
