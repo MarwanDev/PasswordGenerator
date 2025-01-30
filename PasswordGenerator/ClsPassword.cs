@@ -75,6 +75,11 @@ namespace PasswordGenerator
         public static string GeneratePassword()
         {
             string password = "";
+            if (IsMemorable && KeyWord.Length > Length)
+            {
+                MessageBox.Show("Keyword must be longer or the same length as password length", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return "";
+            }
             if (IsMemorable && KeyWord.Length > 0)
             {
                 GeneratePasswordMaterial(true);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.IO;
+using PasswordGenerator.Properties;
 namespace PasswordGenerator
 {
     public partial class MultiplePasswordsForm : Form
@@ -15,6 +16,7 @@ namespace PasswordGenerator
 
         private void MultiplePasswordsForm_Load(object sender, EventArgs e)
         {
+            nudNumberOfPasswords.Value = Settings.Default.NumberOfPasswords;
             _numberOfPasswords = (short)nudNumberOfPasswords.Value;
             btnSave.Enabled = rtbMultiplePasswords.Text.Length > 0;
             rtbMultiplePasswords.Clear();
@@ -24,10 +26,12 @@ namespace PasswordGenerator
         {
             rtbMultiplePasswords.Invalidate();
         }
-
+ 
         private void NudNumberOfPasswords_ValueChanged(object sender, EventArgs e)
         {
             _numberOfPasswords = (short)nudNumberOfPasswords.Value;
+            Settings.Default.NumberOfPasswords = _numberOfPasswords;
+            Settings.Default.Save();
         }
 
         private void BtnGenerateMultiplePasswords_Click(object sender, EventArgs e)

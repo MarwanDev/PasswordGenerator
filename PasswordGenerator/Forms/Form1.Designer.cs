@@ -45,7 +45,7 @@
             this.automaticallyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetToDefaultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.nbLength = new System.Windows.Forms.NumericUpDown();
+            this.nubLength = new System.Windows.Forms.NumericUpDown();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnCopy = new System.Windows.Forms.Button();
             this.tbSinglePassword = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@
             this.tabRandom.SuspendLayout();
             this.tabMemorable.SuspendLayout();
             this.msMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nbLength)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nubLength)).BeginInit();
             this.msMultiple.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -220,7 +220,6 @@
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "&Settings";
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
             // 
             // automaticallyToolStripMenuItem
             // 
@@ -235,6 +234,7 @@
             this.resetToDefaultsToolStripMenuItem.Name = "resetToDefaultsToolStripMenuItem";
             this.resetToDefaultsToolStripMenuItem.Size = new System.Drawing.Size(294, 22);
             this.resetToDefaultsToolStripMenuItem.Text = "Reset to Defaults...";
+            this.resetToDefaultsToolStripMenuItem.Click += new System.EventHandler(this.ResetToDefaultsToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -246,29 +246,29 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Length:";
             // 
-            // nbLength
+            // nubLength
             // 
-            this.nbLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nbLength.Location = new System.Drawing.Point(144, 37);
-            this.nbLength.Maximum = new decimal(new int[] {
+            this.nubLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nubLength.Location = new System.Drawing.Point(144, 37);
+            this.nubLength.Maximum = new decimal(new int[] {
             999,
             0,
             0,
             0});
-            this.nbLength.Minimum = new decimal(new int[] {
+            this.nubLength.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nbLength.Name = "nbLength";
-            this.nbLength.Size = new System.Drawing.Size(443, 38);
-            this.nbLength.TabIndex = 3;
-            this.nbLength.Value = new decimal(new int[] {
+            this.nubLength.Name = "nubLength";
+            this.nubLength.Size = new System.Drawing.Size(443, 38);
+            this.nubLength.TabIndex = 3;
+            this.nubLength.Value = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.nbLength.ValueChanged += new System.EventHandler(this.NbLength_ValueChanged);
+            this.nubLength.ValueChanged += new System.EventHandler(this.NbLength_ValueChanged);
             // 
             // btnGenerate
             // 
@@ -356,7 +356,7 @@
             this.Controls.Add(this.tbSinglePassword);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnGenerate);
-            this.Controls.Add(this.nbLength);
+            this.Controls.Add(this.nubLength);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbPasswordType);
             this.Controls.Add(this.msMain);
@@ -371,7 +371,7 @@
             this.tabMemorable.PerformLayout();
             this.msMain.ResumeLayout(false);
             this.msMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nbLength)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nubLength)).EndInit();
             this.msMultiple.ResumeLayout(false);
             this.msMultiple.PerformLayout();
             this.ResumeLayout(false);
@@ -391,7 +391,7 @@
         private System.Windows.Forms.ToolStripMenuItem automaticallyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetToDefaultsToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown nbLength;
+        private System.Windows.Forms.NumericUpDown nubLength;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.Button btnCopy;
