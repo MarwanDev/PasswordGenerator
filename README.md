@@ -52,10 +52,10 @@ Try out the application by downloading it using the link below:
 ## Installation 🖥️
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/MarwanDev/MemoryGame.git
+   git clone https://github.com/MarwanDev/PasswordGenerator.git
 
 ## Screenshots 🖼️
-Take a look at the game in action:  
+Take a look at the app in action:  
 
 ### Start
 ![Start](Screenshots/Start.JPG)  
