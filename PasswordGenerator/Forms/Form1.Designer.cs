@@ -302,7 +302,9 @@
             // 
             // pbProgress
             // 
+            this.pbProgress.ForeColor = System.Drawing.SystemColors.Control;
             this.pbProgress.Location = new System.Drawing.Point(2, 397);
+            this.pbProgress.MarqueeAnimationSpeed = 0;
             this.pbProgress.Name = "pbProgress";
             this.pbProgress.Size = new System.Drawing.Size(605, 24);
             this.pbProgress.TabIndex = 10;

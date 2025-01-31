@@ -70,6 +70,15 @@ namespace PasswordGenerator
             Settings.Default.Save();
         }
 
+        private void UpdateProgressBar()
+        {
+            if (ClsPassword.NumberOfBits >= pbProgress.Maximum)
+                pbProgress.Value = pbProgress.Maximum;
+            else
+                pbProgress.Value = Math.Abs(((int)Math.Floor(ClsPassword.NumberOfBits)));
+            pbProgress.Refresh();
+        }
+
         private void BtnGenerate_Click(object sender, EventArgs e)
         {
             string password = ClsPassword.GeneratePassword();
@@ -78,8 +87,7 @@ namespace PasswordGenerator
             {
                 ClsPassword.CalculatePasswordEntropy(tbSinglePassword.Text);
                 lblBits.Text = $"{Math.Round(ClsPassword.NumberOfBits, 2)} bits";
-                pbProgress.Value = Math.Abs(((int)Math.Floor(ClsPassword.NumberOfBits)));
-                pbProgress.Refresh();
+                UpdateProgressBar();
             }
             if (_isAutomaticCopy)
                 System.Windows.Forms.Clipboard.SetText(tbSinglePassword.Text);
