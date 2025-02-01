@@ -29,7 +29,7 @@ Password Generator is a .NET Windows Forms desktop application inspired by Vovos
 
 ## Live Demo 🔗
 Try out the application by downloading it using the link below:  
-[Download Password Generator](https://drive.google.com/file/d/1BJu1ZQqjjSIt2uKG_dE-MBhwFFr_oLKh/view?usp=sharing)  
+[Download Password Generator](https://drive.google.com/file/d/1cIbyf-pi1KYEphzK858EX2mLtwEbPxYQ/view?usp=sharing)  
 
 ---
 
